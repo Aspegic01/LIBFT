@@ -1,40 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlabrirh <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mlabrirh <mlabrirh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/26 14:33:21 by mlabrirh          #+#    #+#             */
-/*   Updated: 2024/10/26 14:34:26 by mlabrirh         ###   ########.fr       */
+/*   Created: 2024/10/27 10:18:48 by mlabrirh          #+#    #+#             */
+/*   Updated: 2024/10/27 10:27:56 by mlabrirh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
 	size_t	i;
-	size_t	j;
+	unsigned char *str = (unsigned char *)s;
+	unsigned char ch = (unsigned char)c;
 
 	i = 0;
-	while (dst[i] !=0)
+	while (i < n)
 	{
+			if (str[i] == ch)
+		{
+			return &str[i];
+		}
 		i++;
 	}
-	j = 0;
-	while (i < size)
-	{
-		dst[j] = src[i];
-		j++;
-		i++;
-	}
-	return j;
-}
-int main ()
-{
-	char s[]="hello";
-	char d[]="word";
-	ft_strlcat(d,s,4);
-	printf("%s\n",d);
+	return (NULL);
 }
