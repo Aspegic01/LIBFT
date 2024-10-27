@@ -35,10 +35,3 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	}
 	return (NULL);
 }
-int main ()
-{
-    char s[] = "hello word welcom to 1337";
-    char c[] = "1337";
-    char *result = ft_strnstr(s,c,20);
-    printf("%s\n",result);
-}
