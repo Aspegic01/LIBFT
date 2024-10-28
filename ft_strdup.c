@@ -6,7 +6,7 @@
 /*   By: mlabrirh <mlabrirh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 12:30:44 by mlabrirh          #+#    #+#             */
-/*   Updated: 2024/10/28 13:52:18 by mlabrirh         ###   ########.fr       */
+/*   Updated: 2024/10/28 13:56:30 by mlabrirh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ char	*ft_strdup(const char *s1)
 		dest[i] = s1[i];
 		i++;
 	}
+	dest[i] = 0;
 	return dest;
 	
 }
