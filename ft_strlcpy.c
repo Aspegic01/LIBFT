@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlabrirh <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mlabrirh <mlabrirh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 12:05:03 by mlabrirh          #+#    #+#             */
-/*   Updated: 2024/10/26 12:10:21 by mlabrirh         ###   ########.fr       */
+/*   Updated: 2024/10/29 10:03:47 by mlabrirh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,11 @@ size_t	*ft_strlcpy(char *dst, const char *src, size_t size)
 
 	return 0;
 }
-int main()
+/*int main()
 {
 	char s[] = "hello";
 	char h[5];
 	ft_strlcpy(h,s,3);
 	printf("%s\n",h);
 }
-
+*/

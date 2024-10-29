@@ -1,28 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlabrirh <mlabrirh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/23 08:59:44 by mlabrirh          #+#    #+#             */
-/*   Updated: 2024/10/29 09:13:04 by mlabrirh         ###   ########.fr       */
+/*   Created: 2024/10/29 10:31:01 by mlabrirh          #+#    #+#             */
+/*   Updated: 2024/10/29 10:31:41 by mlabrirh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+char **ft_split(char const *s, char c)
 {
-	size_t	i;
-
-	i = 0;
-	if (dest == src)
-		return (dest);
-	while (i < n)
-	{
-		*(unsigned char*)(dest + i) = *(unsigned char*)(src + i);
-		i++;
-	}
-	return (dest);
+	
 }
