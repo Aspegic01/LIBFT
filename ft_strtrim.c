@@ -6,7 +6,7 @@
 /*   By: mlabrirh <mlabrirh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 09:22:02 by mlabrirh          #+#    #+#             */
-/*   Updated: 2024/10/29 10:30:00 by mlabrirh         ###   ########.fr       */
+/*   Updated: 2024/10/29 12:42:18 by mlabrirh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,11 @@ char* ft_strtrim(char const* s1, char const* set)
 	}
 	return (str);
 }
-/*int main()
+int main()
 {
 	char s[] = "   hello word  ";
 	char *set = " ";
 	char *r = ft_strtrim(s,set);
 	puts(r);
 }
-*/
+
