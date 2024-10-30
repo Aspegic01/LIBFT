@@ -6,7 +6,7 @@
 /*   By: mlabrirh <mlabrirh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 12:30:44 by mlabrirh          #+#    #+#             */
-/*   Updated: 2024/10/28 13:56:30 by mlabrirh         ###   ########.fr       */
+/*   Updated: 2024/10/30 15:51:57 by mlabrirh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strdup(const char *s1)
 	int	len;
 	len = ft_strlen(s1);
 	dest = malloc(sizeof(char) * (len + 1));
-	if (dest == 0)
+	if (!dest)
 	{
 		return NULL;
 	}
@@ -30,7 +30,6 @@ char	*ft_strdup(const char *s1)
 	}
 	dest[i] = 0;
 	return dest;
-	
 }
 int main()
 {

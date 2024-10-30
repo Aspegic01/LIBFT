@@ -1,43 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlabrirh <mlabrirh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/23 15:11:19 by mlabrirh          #+#    #+#             */
-/*   Updated: 2024/10/30 15:41:55 by mlabrirh         ###   ########.fr       */
+/*   Created: 2024/10/30 17:19:15 by mlabrirh          #+#    #+#             */
+/*   Updated: 2024/10/30 17:22:05 by mlabrirh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-int	ft_atoi(const char *nptr)
+char	*ft_itoa(int n)
 {
-	int	sign;
-	int	nb;
-	int	i;
-
-	i = 0;
-	while((nptr[i]  == ' ') || (nptr[i] == '\t' || nptr[i] == '\r'))
-		i++;
-	sign = 1;
-	if (nptr[i] == '-' || nptr[i] == '+')
-	{
-		if (nptr[i] == '-')
-		{
-			sign *= -sign;
-		}
-		i++;
-	}
-	nb = 0;
-	while (nptr[i] >= '0' && nptr[i] <= '9')
-	{
-		nb = nb * 10 + nptr[i] - '0';
-		i++;
-	}
-	return nb * sign;
-}
-int main()
-{
-	printf("%d\n",ft_atoi("  	+123"));
+	
 }

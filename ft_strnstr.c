@@ -6,7 +6,7 @@
 /*   By: mlabrirh <mlabrirh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 11:10:08 by mlabrirh          #+#    #+#             */
-/*   Updated: 2024/10/27 11:58:54 by mlabrirh         ###   ########.fr       */
+/*   Updated: 2024/10/30 15:29:06 by mlabrirh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t	j;
 
 	i = 0;
-	j = 0;
 	j = ft_strlen(little);
 
 	if (little[0] == 0)
