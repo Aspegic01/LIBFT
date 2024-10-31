@@ -6,7 +6,7 @@
 /*   By: mlabrirh <mlabrirh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2024/10/30 16:11:20 by mlabrirh         ###   ########.fr       */
+/*   Updated: 2024/10/31 20:57:28 by mlabrirh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	count_word(char *str, char c)
 	}
 	while(str[i])
 	{
-		if (str[i -1] == c && str[i] != c)
+		if (str[i - 1] == c && str[i] != c)
 		{
 			count++;
 		}
@@ -60,9 +60,10 @@ char	**ft_split(char const *s, char c)
 	strs[i] = NULL;
 	return strs;
 }
+
 int main()
 {
-	char s[] = "hello word gg";
+	char s[] = "hello world gg";
 	char **word = ft_split(s,' ');
 	int i = 0;
 	while (word[i])

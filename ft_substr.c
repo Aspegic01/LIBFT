@@ -6,7 +6,7 @@
 /*   By: mlabrirh <mlabrirh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 17:48:04 by mlabrirh          #+#    #+#             */
-/*   Updated: 2024/10/30 16:13:04 by mlabrirh         ###   ########.fr       */
+/*   Updated: 2024/10/31 20:54:10 by mlabrirh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	dest[i] = '\0';
 	return (dest); 
 }
-int main()
-{
-	char *str = "hello, world!";
-	char *r = ft_substr(str,7,5);
-	puts(r);
-}
+// int main()
+// {
+// 	char *str = "hello, world!";
+// 	char *r = ft_substr(str,7,5);
+// 	puts(r);
+// }

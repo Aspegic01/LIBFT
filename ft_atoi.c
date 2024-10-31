@@ -6,7 +6,7 @@
 /*   By: mlabrirh <mlabrirh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 15:11:19 by mlabrirh          #+#    #+#             */
-/*   Updated: 2024/10/30 15:41:55 by mlabrirh         ###   ########.fr       */
+/*   Updated: 2024/10/31 20:42:47 by mlabrirh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,5 @@ int	ft_atoi(const char *nptr)
 }
 int main()
 {
-	printf("%d\n",ft_atoi("  	+123"));
+    printf("%d",atoi(""));
 }
