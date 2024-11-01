@@ -3,66 +3,63 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlabrirh <mlabrirh@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: mlabrirh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/01 09:04:41 by mlabrirh          #+#    #+#             */
-/*   Updated: 2024/11/01 09:24:00 by mlabrirh         ###   ########.fr       */
+/*   Created: 2024/11/01 16:56:40 by mlabrirh          #+#    #+#             */
+/*   Updated: 2024/11/01 16:56:49 by mlabrirh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_getlen(long n)  // static keyword removed
+int	count_digit(int n)
 {
-	int	i;
+	int	len;
 
-	i = 0;
-	if (n == 0)
-		return (1);
+	len = 1;
 	if (n < 0)
 	{
-		i++;
-		n = -n;
+		n *= -1;
+		len++;
 	}
-	while (n > 0)
+	while (n > 9)
 	{
-		n /= 10;
-		i++;
+		n = n / 10;
+		len++;
 	}
-	return (i);
+	return (len);
 }
 
-char	*ft_itoa(int m)
+void	ft_strrev(char *str, int n, int len)
 {
-	size_t	len;
-	long	n;
-	char	*s;
+	while (n > 0)
+	{
+		str[--len] = n % 10 + '0';
+		n = n / 10;
+	}
+}
 
-	n = (long)m;
-	len = ft_getlen(n);
-	s = (char *)malloc(sizeof(char) * len + 1);
-	if (!s)
-		return (NULL);
+char	*ft_itoa(int n)
+{
+	int	len;
+	int	is_negative;
+	char	*str;
+
+	len = count_digit(n);
+	str = (char *)malloc(sizeof(char) * (len + 1));
+	if (str == 0)
+		return (0);
 	if (!n)
-		s[0] = '0';
+		str[0] = '0';
+	is_negative = 0;
 	if (n < 0)
 	{
-		s[0] = '-';
-		n = -n;
+		is_negative = 1;
+		n *= -1;
 	}
-	s[len] = 0;
-	while (n > 0)
-	{
-		s[--len] = n % 10 + 48;
-		n /= 10;
-	}
-	return (s);
-}
-#include "libft.h" // Assuming this contains the declaration of ft_itoa
-#include <stdio.h>
-
-int main() {
-  printf("%s\n",ft_itoa(37463));
-
-  return 0;
+	str[len] = '\0';
+	ft_strrev(str, n, len);
+	if (is_negative)
+		str[0] = '-';
+	return (str);
 }
