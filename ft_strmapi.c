@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlabrirh <mlabrirh@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: mlabrirh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/28 09:17:21 by mlabrirh          #+#    #+#             */
-/*   Updated: 2024/11/01 19:16:09 by mlabrirh         ###   ########.fr       */
+/*   Created: 2024/11/02 14:05:35 by mlabrirh          #+#    #+#             */
+/*   Updated: 2024/11/03 15:38:12 by mlabrirh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *s1, const char *s2, size_t n)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t	i;
-	size_t	j;
+	unsigned int	i;
+	char			*str;
 
+	if (!s)
+		return (NULL);
 	i = 0;
-	while (s1[i] != 0 && i < n)
-		i++;
-	j = i;
-	while (s2[i - j] != 0 && i < n - 1)
+	str = (char *)malloc(sizeof(char) * (ft_strlen(s)) + 1);
+	if (str == NULL)
+		return (NULL);
+	while (s[i] != '\0')
 	{
-		s1[i] = s2[i - j];
+		str[i] = f(i, s[i]);
 		i++;
 	}
-	if (j < n)
-		s1[i] = 0;
-	return (j + ft_strlen(s2));
+	str[i] = '\0';
+	return (str);
 }

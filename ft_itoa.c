@@ -6,13 +6,13 @@
 /*   By: mlabrirh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 16:56:40 by mlabrirh          #+#    #+#             */
-/*   Updated: 2024/11/01 16:56:49 by mlabrirh         ###   ########.fr       */
+/*   Updated: 2024/11/04 11:36:45 by mlabrirh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	count_digit(int n)
+static int	count_digit(long n)
 {
 	int	len;
 
@@ -30,7 +30,7 @@ int	count_digit(int n)
 	return (len);
 }
 
-void	ft_strrev(char *str, int n, int len)
+static void	ft_strrev(char *str, long n, int len)
 {
 	while (n > 0)
 	{
@@ -41,25 +41,31 @@ void	ft_strrev(char *str, int n, int len)
 
 char	*ft_itoa(int n)
 {
+	long	num;
 	int	len;
 	int	is_negative;
-	char	*str;
+	char			*str;
 
-	len = count_digit(n);
+	num = n;
+	len = count_digit(num);
 	str = (char *)malloc(sizeof(char) * (len + 1));
 	if (str == 0)
 		return (0);
-	if (!n)
+	if (!num)
 		str[0] = '0';
 	is_negative = 0;
-	if (n < 0)
+	if (num < 0)
 	{
 		is_negative = 1;
-		n *= -1;
+		num *= -1;
 	}
 	str[len] = '\0';
-	ft_strrev(str, n, len);
+	ft_strrev(str, num, len);
 	if (is_negative)
 		str[0] = '-';
 	return (str);
+}
+int main()
+{
+	printf("%s\n",ft_itoa(-21474836));
 }

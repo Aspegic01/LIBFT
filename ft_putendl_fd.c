@@ -1,32 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlabrirh <mlabrirh@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: mlabrirh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/28 09:17:21 by mlabrirh          #+#    #+#             */
-/*   Updated: 2024/11/01 19:16:09 by mlabrirh         ###   ########.fr       */
+/*   Created: 2024/11/04 10:31:34 by mlabrirh          #+#    #+#             */
+/*   Updated: 2024/11/04 10:46:25 by mlabrirh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *s1, const char *s2, size_t n)
+void	ft_putendl_fd(char *s, int fd)
 {
-	size_t	i;
-	size_t	j;
-
-	i = 0;
-	while (s1[i] != 0 && i < n)
-		i++;
-	j = i;
-	while (s2[i - j] != 0 && i < n - 1)
-	{
-		s1[i] = s2[i - j];
-		i++;
-	}
-	if (j < n)
-		s1[i] = 0;
-	return (j + ft_strlen(s2));
+	ft_putstr_fd(s, fd);
+	write(fd, "\n", 1);
 }

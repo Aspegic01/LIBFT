@@ -1,36 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlabrirh <mlabrirh@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: mlabrirh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/22 19:03:16 by mlabrirh          #+#    #+#             */
-/*   Updated: 2024/11/04 21:32:59 by mlabrirh         ###   ########.fr       */
+/*   Created: 2024/11/04 10:11:11 by mlabrirh          #+#    #+#             */
+/*   Updated: 2024/11/04 10:43:01 by mlabrirh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+void	ft_putstr_fd(char *s, int fd)
 {
 	size_t	i;
 
 	i = 0;
-	while (i < n)
+	while (s[i] != 0)
 	{
-		*(unsigned char *)(s + i) = (unsigned char) c;
+		write(fd, &s[i], 1);
 		i++;
 	}
-	return (s);
-}
-int main()
-{
-	int i = 4286565;
-
-	ft_memset(&i, 57, 1);
-	ft_memset((char *)&i + 1, 5, 1);
-	ft_memset((char *)&i + 2, 0, 1);
-	ft_memset((char *)&i + 3, 0 ,1);
-	printf("%d\n", i);
 }

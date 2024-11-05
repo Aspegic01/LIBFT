@@ -6,7 +6,7 @@
 /*   By: mlabrirh <mlabrirh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: Invalid date        by                   #+#    #+#             */
-/*   Updated: 2024/10/31 20:57:28 by mlabrirh         ###   ########.fr       */
+/*   Updated: 2024/11/03 14:04:34 by mlabrirh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ char	**ft_split(char const *s, char c)
 
 int main()
 {
-	char s[] = "hello world gg";
+	char s[] = "hello word ko kok pada";
 	char **word = ft_split(s,' ');
 	int i = 0;
 	while (word[i])

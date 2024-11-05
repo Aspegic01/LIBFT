@@ -1,36 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlabrirh <mlabrirh@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: mlabrirh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/22 19:03:16 by mlabrirh          #+#    #+#             */
-/*   Updated: 2024/11/04 21:32:59 by mlabrirh         ###   ########.fr       */
+/*   Created: 2024/11/03 15:38:56 by mlabrirh          #+#    #+#             */
+/*   Updated: 2024/11/03 16:11:58 by mlabrirh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	size_t	i;
 
 	i = 0;
-	while (i < n)
+	while (s[i])
 	{
-		*(unsigned char *)(s + i) = (unsigned char) c;
+		f(i, &s[i]);
 		i++;
 	}
-	return (s);
-}
-int main()
-{
-	int i = 4286565;
-
-	ft_memset(&i, 57, 1);
-	ft_memset((char *)&i + 1, 5, 1);
-	ft_memset((char *)&i + 2, 0, 1);
-	ft_memset((char *)&i + 3, 0 ,1);
-	printf("%d\n", i);
 }
