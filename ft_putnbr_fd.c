@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlabrirh <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mlabrirh <mlabrirh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 10:53:42 by mlabrirh          #+#    #+#             */
-/*   Updated: 2024/11/04 10:58:52 by mlabrirh         ###   ########.fr       */
+/*   Updated: 2024/11/06 11:34:30 by mlabrirh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,4 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 	c = (n % 10) + '0';
 	write(fd, &c, 1);
-}
-int main()
-{
-	ft_putnbr_fd(23123,1);
 }

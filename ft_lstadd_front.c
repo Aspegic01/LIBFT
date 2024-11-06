@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlabrirh <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mlabrirh <mlabrirh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 10:30:06 by mlabrirh          #+#    #+#             */
-/*   Updated: 2024/11/06 10:45:37 by mlabrirh         ###   ########.fr       */
+/*   Updated: 2024/11/06 12:02:25 by mlabrirh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 		*lst = new;
 	}
 }
-int main(void)
+/*int main(void)
 {
 	t_list *node1 = ft_lstnew(&(int){1});
     	t_list *head = NULL;
@@ -31,3 +31,4 @@ int main(void)
        		 printf("%d\n", *(int *)(head->content));
     	free(node1);
 }
+*/

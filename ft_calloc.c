@@ -6,7 +6,7 @@
 /*   By: mlabrirh <mlabrirh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 10:43:53 by mlabrirh          #+#    #+#             */
-/*   Updated: 2024/10/30 15:05:17 by mlabrirh         ###   ########.fr       */
+/*   Updated: 2024/11/06 12:04:36 by mlabrirh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,15 @@
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	unsigned char *tmp;
-	size_t	i;
+	unsigned char	*tmp;
+	size_t			i;
 
 	tmp = malloc(count * size);
-	
 	if (!tmp)
 	{
 		return (NULL);
 	}
 	i = 0;
-	
 	while (i < count * size)
 	{
 		tmp[i++] = 0;

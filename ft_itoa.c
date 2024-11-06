@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlabrirh <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mlabrirh <mlabrirh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 16:56:40 by mlabrirh          #+#    #+#             */
-/*   Updated: 2024/11/04 11:36:45 by mlabrirh         ###   ########.fr       */
+/*   Updated: 2024/11/06 11:24:44 by mlabrirh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,9 @@ static void	ft_strrev(char *str, long n, int len)
 char	*ft_itoa(int n)
 {
 	long	num;
-	int	len;
-	int	is_negative;
-	char			*str;
+	int		len;
+	int		is_negative;
+	char	*str;
 
 	num = n;
 	len = count_digit(num);
@@ -64,8 +64,4 @@ char	*ft_itoa(int n)
 	if (is_negative)
 		str[0] = '-';
 	return (str);
-}
-int main()
-{
-	printf("%s\n",ft_itoa(-21474836));
 }
