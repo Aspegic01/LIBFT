@@ -6,13 +6,14 @@
 /*   By: mlabrirh <mlabrirh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 13:57:11 by mlabrirh          #+#    #+#             */
-/*   Updated: 2024/11/09 10:59:46 by mlabrirh         ###   ########.fr       */
+/*   Updated: 2024/11/10 19:04:26 by mlabrirh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include <stdint.h>
 # include <stddef.h>
 # include <stdio.h>
 # include <stdio.h>

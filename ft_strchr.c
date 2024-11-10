@@ -6,7 +6,7 @@
 /*   By: mlabrirh <mlabrirh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 18:52:55 by mlabrirh          #+#    #+#             */
-/*   Updated: 2024/10/31 19:41:43 by mlabrirh         ###   ########.fr       */
+/*   Updated: 2024/11/10 19:01:13 by mlabrirh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strchr(const char *s, int c)
 	size_t	i;
 
 	i = 0;
-	while (s[i])
+	while (s[i] != 0)
 	{
 		if (s[i] == (unsigned char)c)
 		{
