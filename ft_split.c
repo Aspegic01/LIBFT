@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlabrirh <mlabrirh@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: mlabrirh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/06 11:36:08 by mlabrirh          #+#    #+#             */
-/*   Updated: 2024/11/06 11:41:48 by mlabrirh         ###   ########.fr       */
+/*   Created: 2024/11/10 22:12:58 by mlabrirh          #+#    #+#             */
+/*   Updated: 2024/11/10 22:22:30 by mlabrirh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	int	count_word(char *str, char c)
+static	int	count_words(const char *str, char c)
 {
 	int	i;
 	int	count;
@@ -34,29 +34,54 @@ static	int	count_word(char *str, char c)
 	return (count);
 }
 
+static int	extract_next_word(char **s, char c, char ***result, int *j)
+{
+	int	len;
+
+	while (**s == c)
+		(*s)++;
+	if (**s != '\0')
+	{
+		len = 0;
+		while ((*s)[len] && (*s)[len] != c)
+			len++;
+		(*result)[*j] = ft_substr(*s, 0, len);
+		if (!(*result)[*j])
+			return (0);
+		(*j)++;
+		*s += len;
+	}
+	return (1);
+}
+
+static void	free_split(char **result, int j)
+{
+	while (j > 0)
+		free(result[--j]);
+	free(result);
+}
+
 char	**ft_split(char const *s, char c)
 {
-	char	**strs;
-	int		i;
-	int		slen;
+	int		words;
+	char	**result;
+	int		j;
 
-	strs = (char **)malloc(sizeof(char *) * (count_word((char *)s, c) + 1));
-	if (!strs)
+	if (!s)
 		return (NULL);
-	i = 0;
+	words = count_words(s, c);
+	result = (char **)malloc(sizeof(char *) * (words + 1));
+	if (!result)
+		return (NULL);
+	j = 0;
 	while (*s)
 	{
-		while (*s == c && *s)
+		if (!extract_next_word((char **)&s, c, &result, &j))
 		{
-			s++;
+			free_split(result, j);
+			return (NULL);
 		}
-		if (!ft_strchr(s, c))
-			slen = ft_strlen(s);
-		else
-			slen = ft_strchr(s, c) - s;
-		strs[i++] = ft_substr(s, 0, slen);
-		s += slen;
 	}
-	strs[i] = (NULL);
-	return (strs);
+	result[j] = NULL;
+	return (result);
 }
