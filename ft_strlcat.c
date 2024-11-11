@@ -6,12 +6,12 @@
 /*   By: mlabrirh <mlabrirh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 09:17:21 by mlabrirh          #+#    #+#             */
-/*   Updated: 2024/11/06 14:00:01 by mlabrirh         ###   ########.fr       */
+/*   Updated: 2024/11/11 15:16:48 by mlabrirh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+#include<bsd/string.h>
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	s;
@@ -21,7 +21,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 
 	si = ft_strlen(src);
 	if (!dst && size == 0)
-		return (si);
+		return(si);
 	d = ft_strlen(dst);
 	di = d;
 	if (size <= di)
@@ -35,4 +35,9 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	}
 	dst[d] = 0;
 	return (di + si);
+}
+int main()
+{
+	char s[] = "hello word";
+	strlcat(NULL,s,10);
 }
