@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlabrirh <mlabrirh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 09:18:31 by mlabrirh          #+#    #+#             */
-/*   Updated: 2024/11/11 14:27:23 by mlabrirh         ###   ########.fr       */
+/*   Updated: 2024/11/12 10:22:00 by mlabrirh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ t_list	*ft_lstnew(void *content)
 	head->next = NULL;
 	return (head);
 }
-int main(void)
+/*int main(void)
 {
     	int num1 = 1;
     	int num2 = 2;
@@ -58,4 +58,4 @@ int main(void)
     	free(node4);
     	free(node3);
     	free(node2);
-}
+}*/

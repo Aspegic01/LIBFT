@@ -29,7 +29,7 @@ $(NAME): $(OBJ)
 so:
 	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)
 	gcc -nostartfiles -shared -o libft.so $(OBJ)
-bonus: $(NAME) $(BOBJ)
+bonus: $(BOBJ)
 	ar rcs $(NAME) $(OBJ) $(BOBJ)
 
 clean:
