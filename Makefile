@@ -17,7 +17,6 @@ BSRC = ft_lstnew_bonus.c ft_lstadd_front_bonus.c \
 OBJ = $(SRC:.c=.o)
 BOBJ = $(BSRC:.c=.o)
 NAME = libft.a
-HEADER = libft.h
 
 all: $(NAME)
 
@@ -38,7 +37,6 @@ clean:
 fclean: clean
 	rm -f $(NAME)
 
-re: clean fclean all
+re: fclean
 
 .PHONY: all clean fclean re
-#.SECONDARY:
